@@ -1,11 +1,15 @@
 package lv.venta.model;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
@@ -22,7 +26,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-@Table(name = "Course Table")
+@Table(name = "CourseTable")
 @Entity
 public class Course {
 	//variables
@@ -36,7 +40,7 @@ public class Course {
 	@Pattern(regexp = "[A-Z{1}[1-z]+")
 	@Size(min = 2, max = 10)
 	@Column(name = "Title")
-	private String Title;
+	private String title;
 	
 	@Min(1)    
 	@Max(20)
@@ -47,6 +51,17 @@ public class Course {
 	@JoinColumn(name = "Idp") // need to specify title of variable
 	private Professor professor;
 	
+	@OneToMany(mappedBy = "course")
+	@ToString.Exclude
+	private Collection<Grade> grades;
+
+	public Course(String title, int creditpoints, Professor professor) {
+		setTitle(title);
+		setCreditpoints(creditpoints);
+		setProfessor(professor);
+	}
+	
+
 
 
 }
