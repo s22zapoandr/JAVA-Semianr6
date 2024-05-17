@@ -37,8 +37,8 @@ public class Course {
 	private long idc;
 	
 	@NotNull
-	@Pattern(regexp = "[A-Z{1}[1-z]+")
-	@Size(min = 2, max = 10)
+	@Pattern(regexp = "[A-Z]{1}[a-z ]+")
+	@Size(min = 2, max = 20)
 	@Column(name = "Title")
 	private String title;
 	

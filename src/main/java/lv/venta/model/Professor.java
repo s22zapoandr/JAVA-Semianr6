@@ -32,13 +32,13 @@ public class Professor {
 	private long idp;
 	
 	@NotNull
-	@Pattern(regexp = "[A-Z{1}[1-z]+")
+	@Pattern(regexp = "[A-Z]{1}[a-z ]+")
 	@Size(min = 2, max = 10)
 	@Column(name = "Name")
 	private String name;
 	
 	@NotNull
-	@Pattern(regexp = "[A-Z{1}[1-z]+")         
+	@Pattern(regexp = "[A-Z]{1}[a-z ]+")      
 	@Size(min = 2, max = 20)
 	@Column(name = "Surname")
 	private String surname;
@@ -55,7 +55,7 @@ public class Professor {
 	public Professor(String name, String surname, Degree degree) {
 		setName(name);
 		setSurname(surname);
-		setDegree(getDegree());
+		setDegree(degree);
 	}
 
 }

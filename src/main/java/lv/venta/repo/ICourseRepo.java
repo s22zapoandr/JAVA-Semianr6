@@ -1,9 +1,8 @@
 package lv.venta.repo;
 
-import org.springframework.boot.autoconfigure.cache.CacheProperties.Couchbase;
-
 import org.springframework.data.repository.CrudRepository;
+import lv.venta.model.Course;
 
-public interface ICourseRepo extends CrudRepository<Couchbase, Long>{
+public interface ICourseRepo extends CrudRepository<Course, Long>{
 
 }
