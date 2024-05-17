@@ -27,10 +27,10 @@ import lombok.ToString;
 public class Student {
 	//variables
 		@Setter(value = AccessLevel.NONE)
-		@Column(name = "Idp")
+		@Column(name = "Ids")
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
-		private long idp;
+		private long ids;
 		
 		@NotNull
 		@Pattern(regexp = "[A-Z{1}[1-z]+")
