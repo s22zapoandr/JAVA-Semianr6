@@ -1,0 +1,33 @@
+<hmtl xmlns:th="http://www.thymeleaf.org">
+	
+	
+	<body>
+		<p> All pgrades: </p>
+		<table border 1>
+		<table>
+			
+			<tr>
+				<tr>ID</tr>
+				<tr>Grade</tr>
+				<tr>Name</tr>
+				<tr>Surname</tr>
+				<tr>Title</tr>
+			</tr>
+			
+			
+			<tr th:each = "temp: ${mypackage} ">
+				<td th:text="${temp.getIdg()}"></td>
+				<td th:text="${temp.getGrvalue()}"></td>
+				<td th:text="${temp.getStudent().getName()}"></td>
+				<td th:text="${temp.getStudent().getSurname()}"></td>
+				<td th:text="${temp.getCourse().getTitle()}"></td>
+			</tr>
+			
+		</table>
+		</table>
+		
+		
+		
+	
+	</body>
+</html>
